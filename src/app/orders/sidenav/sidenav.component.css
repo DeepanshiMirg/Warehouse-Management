@@ -1,0 +1,90 @@
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+.hamburger {
+    margin-top: 5%;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.sidenav {
+    background-color: white;
+    overflow-x: hidden;
+    transition: width 0.5s; 
+}
+
+.sidenav a:hover {
+    color: burlywood;
+}
+
+.fa-solid{
+    color: green;
+}
+
+.hamburger i {
+    font-size: 1.5em; 
+} */
+
+
+
+/* Hamburger styling */
+.hamburger {
+  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    /* top: 10px; */
+    left: 0;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+    transition: transform 0.5s ease;
+  }
+  
+  .hamburger i {
+    margin: 5px 0;
+  }
+  
+  .hamburger.open {
+    transform: translateX(150px); /* Moves the hamburger with the sidebar */
+  }
+  
+  /* Sidenav styling */
+  .sidenav-content {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Start hidden off-screen */
+    width: 90px;
+    height: 100%;
+    background-color: bisque;
+    transition: transform 0.5s ease;
+  }
+  
+  .sidenav-content.open {
+    transform: translateX(250px); /* Slides in the sidebar */
+  }
+  
+  .sidenav-content p {
+    color: white;
+    padding: 16px;
+  }
+  
+  /* Styling for icons */
+  .hamburger i {
+    font-size: 1.5em;
+    color: blue;
+  }
+  

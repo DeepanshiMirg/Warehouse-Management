@@ -1,0 +1,34 @@
+<div class="page-container">
+  <app-sidenav class="sidenav"></app-sidenav>
+  <div class="content-container">
+    <app-headers></app-headers>
+    <div class="container">
+      <button [routerLink]="'./orders/create-order'" (click)="click()" class="btn">Add orders</button>
+    </div>
+    <button (click)="abc()">click me </button>
+    <table>
+      <tr>
+        <th>Order ID</th>
+        <th>Order Name</th>
+        <th>Order Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+
+      <tbody>
+        <tr *ngFor="let data of xyz">
+          <td>{{ data.OrderId}}</td>
+          <td>{{ data.Name }}</td>
+          <td>{{ data.Description }}</td>
+          <td>{{ data.Quantity }}</td>
+          <td>{{ data.Price }}</td>
+          <td> 
+          <button style="background-color: blue;" (click)="edit(data)">Edit</button>  
+          <!-- <button (click)="delete(order.id)">Delete</button>
+            -->
+            <button (click)="delete(order._id)">Delete</button> <!-- Use _id instead of id -->
+
+          </td>
+        </tr>
+      </tbody>
+    </table>

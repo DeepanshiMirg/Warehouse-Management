@@ -1,0 +1,53 @@
+<h1>Edit Order</h1>
+<div class="container">    
+    <form >
+      <!-- Order ID -->
+      <div class="form-group">
+        <label for="orderId">Order ID</label>
+        <input id="orderId" type="text" class="form-control" formControlName="orderId">
+        <!-- <div *ngIf="orderForm.get('orderId')?.invalid && orderForm.get('orderId')?.touched" class="error">
+          Order ID is required
+        </div> -->
+      </div>
+  
+      <!-- Order Name -->
+      <div class="form-group">
+        <label for="orderName">Order Name</label>
+        <input id="orderName" type="text" class="form-control" formControlName="orderName">
+        <p>{{ orderForm.get('orderName')?.value }}</p>
+        <div *ngIf="orderForm.get('orderName')?.invalid && orderForm.get('orderName')?.touched" class="error">
+          Order Name is required
+        </div>
+      </div>
+  
+      <!-- Order Description -->
+      <div class="form-group">
+        <label for="orderDescription">Order Description</label>
+        <textarea id="orderDescription" class="form-control" formControlName="orderDescription"></textarea>
+        <!-- <div *ngIf="orderForm.get('orderDescription')?.invalid && orderForm.get('orderDescription')?.touched" class="error">
+          Order Description is required
+        </div> -->
+      </div>
+  
+      <!-- Quantity -->
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input id="quantity" type="number" class="form-control" formControlName="quantity">
+        <!-- <div *ngIf="orderForm.get('quantity')?.invalid && orderForm.get('quantity')?.touched" class="error">
+          Quantity is required and must be greater than 0
+        </div> -->
+      </div>
+  
+      <!-- Price -->
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input id="price" type="number" class="form-control" formControlName="price" step="0.01">
+        <!-- <div *ngIf="orderForm.get('price')?.invalid && orderForm.get('price')?.touched" class="error">
+          Price is required and must be greater than 0
+        </div> -->
+      </div>
+  
+      <button type="submit" class="btn btn-primary" >Submit Order</button>
+    </form>
+  </div>
+  

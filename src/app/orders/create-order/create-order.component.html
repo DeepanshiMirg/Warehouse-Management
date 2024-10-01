@@ -1,0 +1,37 @@
+<h1>{{orderId ? 'Edit Order' : 'Create Order'}}</h1>
+<div class="container" >    
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+      <!-- Order Name -->
+      <div class="form-group">
+        <label for="Name">Order Name</label>
+        <input id="Name" type="text" class="form-control" formControlName="Name">
+        <div *ngIf="orderForm.get('Name')?.invalid && orderForm.get('Name')?.touched" class="error">
+          Order Name is required
+        </div>
+        
+      </div>
+  
+      <!-- Order Price -->
+      <div class="form-group">
+        <label for="Price">Price</label>
+        <input id="Price" type="number" class="form-control" formControlName="Price">
+        <div *ngIf="orderForm.get('Price')?.invalid && orderForm.get('Price')?.touched" class="error">
+          Price is required
+        </div>
+      </div>
+  
+      <!-- Order Quantity -->
+      <div class="form-group">
+        <label for="Quantity">Quantity</label>
+        <textarea id="Quantity" class="form-control" formControlName="Quantity"></textarea>
+        <div *ngIf="orderForm.get('Quantity')?.invalid && orderForm.get('Quantity')?.touched" class="error">
+          Quantity is required
+        </div>
+        
+      </div>
+      <button type="submit" class="btn btn-primary" >{{orderId ? 'Update' : 'Submit'}} Order</button>
+    </form>
+  </div>
+
+  
+  
